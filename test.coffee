@@ -1,20 +1,18 @@
 #!/usr/bin/env coffee
 
-> ./pkg/_ > HashId
+> ./pkg/_ > BinMap
 
-m = new HashId
+m = new BinMap
 
 m.set(
   new Uint8Array(1)
-  2
+  new Uint8Array([1,2,3])
+
 )
 
-m.set new Uint8Array([1]), 0
-m.set new Uint8Array([5]), 5
+m.set new Uint8Array([5]), new Uint8Array [5,6]
 
-console.log m.dump()
-
-m = HashId.load m.dump()
+m = BinMap.load m.dump()
 
 console.log(
   m.get(
@@ -22,4 +20,3 @@ console.log(
   )
 )
 
-console.log m.maxId()
