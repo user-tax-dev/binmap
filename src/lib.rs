@@ -30,6 +30,10 @@ impl BinMap {
     self.write_to_vec().unwrap()
   }
 
+  pub fn len(&self) -> usize {
+    self.0.len()
+  }
+
   #[wasm_bindgen]
   pub fn load(bin: &[u8]) -> BinMap {
     BinMap::read_from_buffer(bin).unwrap()

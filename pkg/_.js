@@ -121,6 +121,13 @@ class BinMap {
         }
     }
     /**
+    * @returns {number}
+    */
+    len() {
+        const ret = wasm.binmap_len(this.ptr);
+        return ret >>> 0;
+    }
+    /**
     * @param {Uint8Array} bin
     * @returns {BinMap}
     */

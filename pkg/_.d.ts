@@ -22,6 +22,10 @@ export class BinMap {
 */
   dump(): Uint8Array;
 /**
+* @returns {number}
+*/
+  len(): number;
+/**
 * @param {Uint8Array} bin
 * @returns {BinMap}
 */
